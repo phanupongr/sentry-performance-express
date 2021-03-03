@@ -5,7 +5,7 @@ const app = express();
 const port = 3000
 
 Sentry.init({
-  dsn: "[project DSN]",
+  dsn: process.env.SENTRY_URL,
   integrations: [
       // enable HTTP calls tracing
       new Sentry.Integrations.Http({ tracing: true }),
